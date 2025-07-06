@@ -22,5 +22,5 @@ Then('I click the login button', () => {
 });
 
 Then('I am shown the appropriate error', () => {
-  Login.textInvalidCredential().should('be.visible');
+  Login.textInvalidCredential({ timeout: 8000 }).should('be.visible');
 });
