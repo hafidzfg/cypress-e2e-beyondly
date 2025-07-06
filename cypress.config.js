@@ -17,7 +17,7 @@ module.exports = defineConfig({
     },
     specPattern: '**/*.feature',
   },
-  projectId: '9za6ya',
+  projectId: process.env.CYPRESS_PROJECT_ID,
   video: true,
   videoCompression: true,
 });
