@@ -1,4 +1,11 @@
 {
+  "scripts": {
+    "run:e2e:all": "npx cypress run --spec 'cypress/e2e/*.feature'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bfi-finance/web-test-automation.git"
+  },
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^22.2.0",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.5",
@@ -7,8 +14,5 @@
   },
   "cypress-cucumber-preprocessor": {
     "stepDefinitions": "cypress/e2e/*.js"
-  },
-  "scripts": {
-    "run:e2e:all": "npx cypress run --spec 'cypress/e2e/*.feature'"
   }
 }
