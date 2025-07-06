@@ -26,11 +26,7 @@ The following code silence that error so we can proceed with the e2e test
     return false;
   }
   // Ignore "Cannot read properties of null" error
-  if (
-    err.message.includes(
-      "Cannot read properties of null (reading 'clientHeight')"
-    )
-  ) {
+  if (err.message.includes("Cannot read properties of null (reading 'clientHeight')")) {
     return false;
   }
 });
