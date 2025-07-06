@@ -43,7 +43,7 @@ jobs:
         if: ${{ inputs.test_type == 'integration' }}
         uses: cypress-io/github-action@v6
         with:
-          command: npm run run:${{ inputs.test_type }}:${{ inputs.squad }} -- --record false
+          command: npm run run:${{ inputs.test_type }} -- --record false
 
       - name: Cypress run with cloud integration
         if: ${{ inputs.test_type == 'e2e' }}

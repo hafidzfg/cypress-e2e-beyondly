@@ -32,5 +32,4 @@ jobs:
       test_type: ${{ github.event.inputs.test_type }}
       test_environment: ${{ github.event.inputs.test_environment }}
       githost_environment: ${{ github.event.inputs.githost_environment }}
-      squad: ${{ github.event.inputs.squad }}
     secrets: inherit
