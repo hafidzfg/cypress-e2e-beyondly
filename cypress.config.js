@@ -17,6 +17,7 @@ module.exports = defineConfig({
     },
     specPattern: '**/*.feature',
   },
+  projectId: '9za6ya',
   video: true,
   videoCompression: true,
 });
