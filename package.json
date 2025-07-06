@@ -1,7 +1,8 @@
 {
   "scripts": {
     "run:e2e": "npx cypress run --spec 'cypress/e2e/*.feature'",
-    "lint": "eslint --fix \"cypress/**/*.js\""
+    "lint": "eslint --fix \"cypress/**/*.js\"",
+    "format": "prettier --check \"cypress/**/*.js\" \"cypress/**/*.json\""
   },
   "repository": {
     "type": "git",
@@ -14,7 +15,8 @@
     "cypress": "^14.5.1",
     "cypress-if": "^1.13.2",
     "eslint": "^9.30.1",
-    "eslint-plugin-cypress": "^5.1.0"
+    "eslint-plugin-cypress": "^5.1.0",
+    "prettier": "3.6.2"
   },
   "cypress-cucumber-preprocessor": {
     "stepDefinitions": "cypress/e2e/*.js"
