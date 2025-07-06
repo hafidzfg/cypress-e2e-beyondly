@@ -18,7 +18,7 @@ on:
         options:
           - test
       githost_environment:
-        description: 'Please input git host environment to run the test (use legacy when vpn is required).'
+        description: 'Please input git host environment to run the test.'
         type: choice
         required: true
         default: 'ubuntu-24.04'

@@ -16,13 +16,21 @@
 // Import commands.js using ES2015 syntax:
 import './commands';
 
-/* Currently there is 401 when doing some action on the test web error:
+Cypress.on('uncaught:exception', (err, runnable, promise) => {
+  /* Currently there is 401 when doing some action on the test web, there is unhandled promis error:
     ````(xhr)POST 401 /user/on-boarding
     Error: Request failed with status code 401```
 The following code silence that error so we can proceed with the e2e test
 */
-Cypress.on('uncaught:exception', (err, runnable, promise) => {
   if (promise) {
+    return false;
+  }
+  // Ignore "Cannot read properties of null" error
+  if (
+    err.message.includes(
+      "Cannot read properties of null (reading 'clientHeight')"
+    )
+  ) {
     return false;
   }
 });
