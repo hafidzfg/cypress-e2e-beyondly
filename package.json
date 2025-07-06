@@ -7,5 +7,8 @@
   },
   "cypress-cucumber-preprocessor": {
     "stepDefinitions": "cypress/e2e/*.js"
+  },
+  "scripts": {
+    "run:e2e:all": "npx cypress run --spec 'cypress/e2e/*.feature'"
   }
 }

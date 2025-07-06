@@ -1,0 +1,37 @@
+name: Automation test
+
+on:
+  workflow_dispatch:
+    branches: [master]
+    inputs:
+      test_type:
+        description: 'Please input test type.'
+        type: choice
+        required: true
+        default: 'e2e'
+        options:
+          - e2e
+      test_environment:
+        description: 'Please input environment to test.'
+        type: choice
+        required: true
+        default: 'test'
+        options:
+          - test
+      githost_environment:
+        description: 'Please input git host environment to run the test (use legacy when vpn is required).'
+        type: choice
+        required: true
+        default: 'ubuntu-24.04'
+        options:
+          - ubuntu-24.04
+
+jobs:
+  RunTest:
+    uses: hafidzfg/cypress-e2e-beyondly/.github/workflows/reuseable.yml@master
+    with:
+      test_type: ${{ github.event.inputs.test_type }}
+      test_environment: ${{ github.event.inputs.test_environment }}
+      githost_environment: ${{ github.event.inputs.githost_environment }}
+      squad: ${{ github.event.inputs.squad }}
+    secrets: inherit

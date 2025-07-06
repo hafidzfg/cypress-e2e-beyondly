@@ -1,0 +1,55 @@
+name: Reuseable test
+
+on:
+  workflow_call:
+    inputs:
+      test_type:
+        description: e2e or integration
+        type: string
+        required: true
+      test_environment:
+        description: test or others
+        type: string
+        required: true
+      githost_environment:
+        description: ubuntu-22-4core or legacy
+        type: string
+        required: true
+
+jobs:
+  RunTest:
+    if: ${{ !cancelled() }}
+    name: Run ${{ inputs.test_type }} test
+    environment: ${{ inputs.test_environment }}
+    runs-on: ${{ inputs.githost_environment }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Set runner timezone to GMT+7
+        uses: szenius/set-timezone@v1.2
+        with:
+          timezoneLinux: 'Asia/Jakarta'
+
+      - name: Set up cypress.env.json from secret
+        run: echo '${{ secrets.CYPRESS_ENV }}' > cypress.env.json
+
+      - name: Cypress run without cloud integration
+        if: ${{ inputs.test_type == 'integration' }}
+        uses: cypress-io/github-action@v6
+        with:
+          command: npm run run:${{ inputs.test_type }}:${{ inputs.squad }} -- --record false
+
+      - name: Cypress run with cloud integration
+        if: ${{ inputs.test_type = 'e2e' }}
+        uses: cypress-io/github-action@v6
+        with:
+          record: false
+          parallel: true
+          group: 'UI-Chrome'
+          command: npm run run:${{ inputs.test_type }}
