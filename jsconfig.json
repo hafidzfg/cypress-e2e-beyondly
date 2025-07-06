@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@e2e/*": ["cypress/e2e/*"],
+      "@pom/*": ["cypress/pom/*"],
+      "@fixtures/*": ["cypress/fixtures/*"]
+    }
+  },
+  "include": ["cypress/**/*.js"],
+  "exclude": ["node_modules", "cypress/videos", "cypress/screenshots", "tools"]
+}
