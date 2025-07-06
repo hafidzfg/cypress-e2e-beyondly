@@ -72,6 +72,10 @@ Configured to run tests on call `.github/workflows/*.yml`.
 
 Test runs can optionally be recorded to [Cypress Cloud](https://cloud.cypress.io/) for improved visibility and debugging support.
 
+### ✅ Test Environment Secrets
+
+Test environment file are stored using github secrets to not expose sensitive data
+
 ---
 
 ## 🔐 GitHub Actions Environment Variables
