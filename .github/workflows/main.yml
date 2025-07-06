@@ -27,7 +27,7 @@ on:
 
 jobs:
   RunTest:
-    uses: hafidzfg/cypress-e2e-beyondly/.github/workflows/reuseable.yml@master
+    uses: hafidzfg/cypress-e2e-beyondly/.github/workflows/reusable.yml@master
     with:
       test_type: ${{ github.event.inputs.test_type }}
       test_environment: ${{ github.event.inputs.test_environment }}
