@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "run:e2e:all": "npx cypress run --spec 'cypress/e2e/*.feature'"
+    "run:e2e": "npx cypress run --spec 'cypress/e2e/*.feature'"
   },
   "repository": {
     "type": "git",
