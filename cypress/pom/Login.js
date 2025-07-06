@@ -12,6 +12,6 @@ export class Login {
     return cy.get('[id="page-login__button-login"]');
   }
   static textInvalidCredential() {
-    return cy.get('p').contains('Email atau password salah. Coba ulangi.');
+    return cy.contains('Email atau password salah. Coba ulangi.');
   }
 }
