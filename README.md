@@ -1,6 +1,6 @@
 # Cypress E2E Testing - Ecommerce test app
 
-This repository contains end-to-end (E2E) test automation using [Cypress](https://www.cypress.io/) for the Beyondly web application. It covers login scenarios using behavior-driven development (BDD), applying the Page Object Model (POM), GitHub Actions for CI, and optional integration with Cypress Cloud for test recording.
+This repository contains end-to-end (E2E) test automation using [Cypress](https://www.cypress.io/) for the a mock ecommerce web application. It covers login scenarios using behavior-driven development (BDD), applying the Page Object Model (POM), GitHub Actions for CI, and optional integration with Cypress Cloud for test recording.
 
 ---
 
