@@ -53,7 +53,4 @@ jobs:
         if: ${{ inputs.test_type == 'e2e' }}
         uses: cypress-io/github-action@v6
         with:
-          record: false
-          parallel: true
-          group: 'UI-Chrome'
-          command: npm run run:${{ inputs.test_type }}
+          command: npm run run:${{ inputs.test_type }} -- --record --key ${{ env.CYPRESS_RECORD_KEY }}
