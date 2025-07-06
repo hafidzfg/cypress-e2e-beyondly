@@ -104,5 +104,6 @@ Created and maintained by [@hafidzfg](https://github.com/hafidzfg). Contribution
 ## Ideas
 
 - More test cases
-- Workflows for push & pull requests
+- Workflows for push (e.g: auto run tests, run linter)
+- Workflows for pull request (e.g: run linter)
 - Proper branching strategy and branch protection
