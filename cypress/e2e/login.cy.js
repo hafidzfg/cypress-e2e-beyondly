@@ -1,8 +1,11 @@
 // Test cases for login page
+import 'cypress-if';
 import { Then } from '@badeball/cypress-cucumber-preprocessor';
-import { Login } from '../pom/Login';
+import Login from '../pom/Login';
+import PromotionModal from '../pom/PromotionModal';
 
 Then('I click the Email tab', () => {
+  PromotionModal.closeIfVisible();
   Login.tabEmail().click();
 });
 

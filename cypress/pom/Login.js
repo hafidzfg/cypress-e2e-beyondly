@@ -1,4 +1,4 @@
-export class Login {
+export default class Login {
   static tabEmail() {
     return cy.get('[id="page-login__tabs-email"]');
   }
