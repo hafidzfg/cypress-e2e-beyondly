@@ -1,7 +1,7 @@
 import 'cypress-if';
 import { Given, Then } from '@badeball/cypress-cucumber-preprocessor';
-import PromotionModal from '../pom/PromotionModal';
-import Header from '../pom/Header';
+import PromotionModal from '@pom/PromotionModal';
+import Header from '@pom/Header';
 
 const BASE_URL = Cypress.env('e2e').baseUrl;
 
