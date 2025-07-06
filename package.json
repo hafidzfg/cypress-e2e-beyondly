@@ -2,7 +2,8 @@
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^22.2.0",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.5",
-    "cypress": "^14.5.1"
+    "cypress": "^14.5.1",
+    "cypress-if": "^1.13.2"
   },
   "cypress-cucumber-preprocessor": {
     "stepDefinitions": "cypress/e2e/*.js"
