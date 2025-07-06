@@ -1,15 +1,21 @@
-import { defineConfig, globalIgnores } from 'eslint/config';
-import pluginCypress from 'eslint-plugin-cypress';
-import js from '@eslint/js';
+// @ts-nocheck
 
-export default defineConfig([
+const { defineConfig, globalIgnores } = require('eslint/config');
+const pluginCypress = require('eslint-plugin-cypress');
+const js = require('@eslint/js');
+
+module.exports = defineConfig([
   {
     files: ['**/*.js'],
+    languageOptions: {
+      ecmaVersion: 'latest'
+    },
     plugins: {
       js,
       cypress: pluginCypress
     },
     rules: {
+      semi: ['error', 'always'],
       'cypress/no-assigning-return-values': 'warn',
       'cypress/no-unnecessary-waiting': 'error',
       'cypress/assertion-before-screenshot': 'warn',
