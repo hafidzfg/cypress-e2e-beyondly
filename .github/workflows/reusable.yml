@@ -46,7 +46,7 @@ jobs:
           command: npm run run:${{ inputs.test_type }}:${{ inputs.squad }} -- --record false
 
       - name: Cypress run with cloud integration
-        if: ${{ inputs.test_type = 'e2e' }}
+        if: ${{ inputs.test_type == 'e2e' }}
         uses: cypress-io/github-action@v6
         with:
           record: false
