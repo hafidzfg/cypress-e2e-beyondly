@@ -2,6 +2,7 @@ import 'cypress-if';
 import { Given, Then } from '@badeball/cypress-cucumber-preprocessor';
 import PromotionModal from '@pom/PromotionModal';
 import Header from '@pom/Header';
+import Homepage from '@pom/Homepage';
 
 const BASE_URL = Cypress.env('e2e').baseUrl;
 
@@ -29,5 +30,15 @@ Then('I am shown the valid homepage details', () => {
   Header.buttonLogin().should('be.visible');
   Header.buttonRegister().should('be.visible');
   // Verify content section
+  // Main banner
+  Homepage.imgBannerMain().should('be.visible');
+  Homepage.buttonNext().should('be.visible');
+  Homepage.buttonPrevious().should('be.visible');
+  Homepage.buttonCloseWa().should('be.visible');
+  Homepage.textWa().should('be.visible');
+  Homepage.linkSvgWa().should('be.visible');
+  Homepage.slickDotsContainer().should('be.visible');
+  Homepage.dotItems().should('be.visible').and('have.length', 4);
+  Homepage.activeDot().should('be.visible').and('have.length', 1);
   // Verify footer section
 });
