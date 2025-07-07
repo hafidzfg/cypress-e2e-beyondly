@@ -76,6 +76,10 @@ Test runs can optionally be recorded to [Cypress Cloud](https://cloud.cypress.io
 
 Test environment file are stored using github secrets to not expose sensitive data
 
+### ✅ API Integration Validation
+
+Validate UI content against api response using `cy.intercept()`
+
 ---
 
 ## 🔐 GitHub Actions Environment Variables
