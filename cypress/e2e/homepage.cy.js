@@ -52,5 +52,22 @@ Then('I am shown the valid homepage details', () => {
       'have.text',
       "Beyondly doesn’t just fit into your life—it elevates it, effortlessly. It's woven into the way you live, work, and move through the day. At Beyondly, we believe wellness is not a destination. It is in every breath, every choice, and every movement, so you can live fully, breathe freely, and move with clarity."
     );
+  // Slider showcase section
+  Homepage.buttonPrevShowcase().should('be.visible');
+  Homepage.buttonNextShowcase().should('be.visible');
+  Homepage.visibleSlides().should('be.visible').and('have.length', 5);
+  // Showcase content
+  Homepage.imgShowcaseContent().should('be.visible');
+  Homepage.textShowcase()
+    .should('be.visible')
+    .and(
+      'have.text',
+      'Every drop of Beyondly Single Essential Oil delivers countless benefits to enhance your daily wellness experience.\n*dari ParagonCorp.'
+    );
+  Homepage.textTitleShowcase().should('be.visible').and('have.text', 'Single Essential Oil2');
+  Homepage.svgShowcaseBackground().should('be.visible').find('path').should('have.attr', 'fill', '#9bcbde');
+  // First container description section
+  // Second container description section
+  // Third container description section
   // Verify footer section
 });

@@ -48,6 +48,28 @@ export default class Homepage {
   }
   // Showcase slider section
   static containerShowcase() {
-    return cy.get('[class*="explanation-tab_about-container"').next('div.row');
+    return cy.get('[class*="explanation-tab_about-container"]').next('div.row');
+  }
+  static buttonPrevShowcase() {
+    return this.containerShowcase().find('button.slick-prev');
+  }
+  static buttonNextShowcase() {
+    return this.containerShowcase().find('button.slick-next');
+  }
+  static visibleSlides() {
+    return this.containerShowcase().find('.slick-slide.slick-active').filter(':visible');
+  }
+  // Showcase content section
+  static imgShowcaseContent() {
+    return cy.get('img[class*="showCase-content_category-img"]');
+  }
+  static textShowcase() {
+    return cy.get('p[class*="showCase-content_subcategory-text"]');
+  }
+  static textTitleShowcase() {
+    return cy.get('p[class*="showCase-content_subcat-text"]');
+  }
+  static svgShowcaseBackground() {
+    return cy.get('[class*="showCase-content_squircle-showcase"]').children('svg');
   }
 }
