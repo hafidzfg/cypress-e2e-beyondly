@@ -1,1 +1,3 @@
-export default class Homepage {}
+export default class Homepage {
+  static;
+}

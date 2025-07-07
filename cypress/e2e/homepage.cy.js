@@ -13,6 +13,19 @@ Given('As a user I open the homepage', () => {
 });
 
 Then('I click the Masuk button', () => {
-  Header.loginButton().click();
+  Header.buttonLogin().click();
   cy.url().should('eq', `${BASE_URL}/login`);
+});
+
+Then('I am shown the valid homepage details', () => {
+  // Verify header section
+  Header.imgBeyondly().should('be.visible');
+  Header.linkTentangKami().should('be.visible');
+  Header.linkProduk().should('be.visible');
+  Header.linkKuisPersonalisasi().should('be.visible');
+  Header.imgKuisPersonalisasi().should('be.visible');
+  Header.buttonLogin().should('be.visible');
+  Header.buttonRegister().should('be.visible');
+  // Verify content section
+  // Verify footer section
 });
