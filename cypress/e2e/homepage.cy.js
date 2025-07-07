@@ -19,6 +19,8 @@ Then('I click the Masuk button', () => {
 
 Then('I am shown the valid homepage details', () => {
   // Verify header section
+  Header.textWelcome().should('be.visible');
+  Header.linkPusatBantuan().should('be.visible');
   Header.imgBeyondly().should('be.visible');
   Header.linkTentangKami().should('be.visible');
   Header.linkProduk().should('be.visible');
