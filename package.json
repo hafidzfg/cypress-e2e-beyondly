@@ -6,7 +6,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bfi-finance/web-test-automation.git"
+    "url": "git+https://github.com/hafidzfg/cypress-e2e-beyondly.git"
   },
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^22.2.0",
